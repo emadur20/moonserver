@@ -1,0 +1,7 @@
+- name: Deploy to moon server
+  run: |
+    scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null dat/readme.md ${{ secrets.MOON_USERNAME }}@${{ secrets.MOON_SERVER }}:/home/avm/courses/cps847-midterm/${{ secrets.SCS_ID }}/deploy/dat/readme.md
+  env:
+    MOON_SERVER: ${{ secrets.MOON_SERVER }}
+    MOON_USERNAME: ${{ secrets.MOON_USERNAME }}
+    SCS_ID: ${{ secrets.SCS_ID }}
